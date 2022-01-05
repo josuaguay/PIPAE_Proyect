@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">   
+  <ion-toolbar color="tertiary">
+    <!--<ion-buttons slot="start">      
+     <ion-menu-button></ion-menu-button>
+   </ion-buttons>/-->     
+   <ion-title>Registro Usuario</ion-title>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img class="icon" src="assets/icon/Logo.png">  
+
+  <ion-item>
+      <ion-label position="floating" > Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre" name="nombre"></ion-input>
+    </ion-item>
+
+<ion-item>
+  <ion-label position="floating" > Correo electrónico</ion-label>
+  <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating" > Contraseña</ion-label>
+  <ion-input  type="password" [(ngModel)]="password" name="password"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Sexo</ion-label>
+  <ion-select placeholder="Select One" [(ngModel)]="sexo">
+    <ion-select-option sexo="Masculino">Masculino</ion-select-option>
+    <ion-select-option sexo="Femenino">Femenino</ion-select-option>
+  </ion-select>
+</ion-item>
+<br>
+<!--<div class="form-group">
+  <h5>Seleccionar image:</h5>
+  <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+</div>-->
+<!--<div class="progress">
+  <div [style.visibility]="(uploadPercent == 0) ? 'hidden' : 'visible'" class="progress-bar progress-bar-striped bg-success"
+    role="progressbar" [style.width]="(uploadPercent | async) +'%'">
+
+     <span class="progressText" *ngIf="urlImage | async">
+      Ok!!</span> 
+  </div>
+</div>-->
+
+<br>
+<ion-button class="botoninicio" color="tertiary" (click)="OnSubmitRegister()">Registrarse</ion-button>
+<br>
+<!--<p text-center routerLink="/login">Ya tengo cuenta</p>-->
+<ion-item detail="true"[routerLink]="['/login']">Ya tengo cuenta</ion-item>

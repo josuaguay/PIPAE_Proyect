@@ -1,0 +1,137 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.titulo{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    color: #ff9f22;
+}
+
+.subtitulo{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.normal{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**.icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10pt;
+    width: 20%;
+    padding-top: 20;
+}*/
+.centr{
+    display: block;
+    text-align: center;
+    //width: auto;
+    //padding-top: 10;
+}
+
+.botoninicio{
+    display: block;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-top: 50pt;   
+}
+
+.register{
+    font-size: 20px;
+    float: left;
+}
+
+.encabezado{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #e9ecef;
+    border-radius: 30px;
+}
+
+.image {
+    padding: 10px; 
+    border: 1px solid #e9ecef;
+    width: 30%;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.imageauto {
+    height: 80px; 
+    width: 20%;
+    padding: 5px;
+}
+
+.imagecarta {
+    padding: 1px; 
+    border: 1px solid #e9ecef;
+    width: 30%;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.content{
+    height: 20px;
+}
+
+.precio{
+    text-align: right;
+    color: blue;
+    font-size: 15px;
+  }
+
+  .icon-producto {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size:15px;
+    margin-right: 15px;
+    background: #ff9f22;
+    padding: 5px;
+    border-radius: 50%;
+    color: #ffffff;
+}
+.cart-modal {
+    --height: 50%;
+    --border-radius: 10px;
+    padding: 25px;
+  }

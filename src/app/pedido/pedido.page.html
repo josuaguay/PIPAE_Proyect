@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">   
+  <ion-toolbar color="tertiary">  
+   <ion-title>Editar Carta</ion-title>
+
+   <ion-buttons slot="end">
+    <ion-button [routerLink]="['/login']" >
+     <ion-icon slot="icon-only"  name="home-outline"></ion-icon>
+   </ion-button>    
+   </ion-buttons>
+
+ </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img class="icon" src="assets/icon/Logo.png"> 
+  <h3 class="subtitulo encabezado" style="text-align: center;" >Ingrese datos del plato/bebida</h3> 
+  <ion-item>
+    <ion-label class="normal" position="floating">Plato/Bebida</ion-label>
+    <ion-input [(ngModel)]="productoEditando.titulo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="normal" position="floating">Descripción Plato/Bebida</ion-label>
+    <ion-input [(ngModel)]="productoEditando.descripcion" class="normal" type="text" inputmode="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="normal" position="floating">Precio</ion-label>
+    <ion-input [(ngModel)]="productoEditando.precio"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="normal">
+        Foto:
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+         <label for="file-upload">
+           <ion-icon slot="icon-only" name="images"></ion-icon>
+         </label>
+        <input  (change)="newImageUpload($event)" id="file-upload" style="display: none" type="file"  accept="image/*">
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-item>
+    <img class="image"  [src]="productoEditando.foto">
+  </ion-item>  
+  <h3 class="subtitulo encabezado" style="text-align: center;">Lista de Platos/Bebidas</h3>
+  <ion-grid>
+    <ion-row>
+      <h5>Edición de Carta</h5>        
+        <ion-button (click)="clicBotonInsertar()" color="tertiary">Añadir</ion-button>        
+        <!--<ion-button (click)="clicBotonBorrar()" color="tertiary">Borrar</ion-button>-->        
+        <ion-button (click)="clicBotonModificar()" color="tertiary">Modificar</ion-button>      
+  </ion-row>
+  </ion-grid>
+  <h1><u>CARTA</u></h1>
+  <ion-list>
+    <!--<ion-item *ngFor="let documentTarea of arrayColeccionTareas" (click)="selecTarea(documentTarea)">-->
+    <ion-item *ngFor="let documentProducto of arrayColeccionProductos">          
+      <ion-buttons slot="end">
+        <ion-button>{{documentProducto.data.precio}}€</ion-button>         
+        <ion-button (click)=" selecProducto(documentProducto) ">
+          <ion-icon slot="icon-only" name="create-sharp"></ion-icon>
+        </ion-button>
+        <ion-button (click)="selecProducto(documentProducto); clicBotonBorrar(documentProducto)">
+          <ion-icon slot="icon-only" color="danger" name="trash-bin"></ion-icon>
+        </ion-button>               
+      </ion-buttons>
+      <img class="image" style="float:left; margin:2px;" alt="" [src]="documentProducto.data.foto">          
+      <ion-grid>
+         
+        <ion-row>
+            <h4>{{documentProducto.data.titulo}}</h4>
+          </ion-row>  
+          <ion-row>                    
+            <p>{{documentProducto.data.descripcion}}</p>  
+            <!--<p style="float:right">{{documentProducto.data.precio}}€</p>-->          
+        </ion-row> 
+      </ion-grid>
+    
+    </ion-item>
+  </ion-list>
+
+  <!--<ion-infinite-scroll threshold="150px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+
+</ion-content>

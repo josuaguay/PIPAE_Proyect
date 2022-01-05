@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+
+    <ion-buttons slot="start">       
+     <ion-menu-button></ion-menu-button>  
+    <ion-title>Usuario</ion-title>      
+    </ion-buttons>  
+
+<!-- Back button with a default href -->
+     <ion-buttons slot="end">
+      <ion-back-button routerLink='/login' default-href="login"></ion-back-button>
+      <ion-title routerLink='/login'>Back</ion-title> 
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="uid.length" >
+
+    <h3 class="subtitulo encabezado" style="text-align: center;">Datos Cliente</h3>
+    <ion-item>
+      <ion-label   class="normal">
+          Nombre: {{cliente.nombre}}
+      </ion-label>         
+    </ion-item>
+    <ion-item>
+      <ion-label   class="normal">
+          Email: {{cliente.email}}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label   class="normal">
+          Sexo: {{cliente.sexo}}
+      </ion-label>
+    </ion-item>
+
+  </div>
+ 
+</ion-content>

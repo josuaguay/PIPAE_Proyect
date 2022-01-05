@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">   
+  <ion-toolbar color="tertiary">
+   <ion-title>Menu</ion-title>
+
+   <!-- Back button with a default href -->
+   <ion-buttons slot="end">
+    <ion-back-button routerLink='/bienvenida' default-href="bienvenida">      
+    </ion-back-button>
+      <ion-title routerLink='/bienvenida'>Back</ion-title> 
+    <ion-button (click)="openCart()" #cart>
+      <p class="cart-length1">{{ cartItemCount | async }}</p>
+      <ion-icon class="cart-icon1" name="cart-sharp"></ion-icon>
+   </ion-button>
+    <ion-button [routerLink]="['/perfil']" >
+      <ion-icon slot="icon-only"  name="person-circle"></ion-icon>
+    </ion-button>
+    
+     <!--<ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button  (click)="openCart()" #cart>
+        <div class="cart-length">{{ cartItemCount | async }}</div>
+        <ion-icon name="cart" class="cart-icon"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>-->
+
+
+    </ion-buttons>
+ 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--<h3>{{titulo}}</h3>-->
+
+
+<ion-list> 
+
+  <div *ngFor="let p of arrayColeccionProducto"> 
+    <ion-item> 
+      <ion-thumbnail class="imagecarta" slot="start"> 
+        <img  [src]="p.data.foto">        
+      </ion-thumbnail>       
+      <ion-label>        
+        <h2>{{p.data.titulo}}</h2>
+        <p>{{p.data.descripcion}}</p>
+        <p class="precio">{{p.data.precio}}€ </p> 
+        <ion-icon (click)="addToCart(p.data)" class="icon-producto" name="add"></ion-icon> 
+      </ion-label>
+    </ion-item>
+  </div>
+     
+
+     <!--<ion-card *ngFor="let p of arrayColeccionProducto">
+          <ion-thumbnail class="imagecarta" slot="start"> 
+            <img  [src]="p.data.foto">        
+          </ion-thumbnail> 
+			<ion-card-header>
+				<ion-card-title>{{ p.data.titulo }}</ion-card-title>
+			</ion-card-header>
+			<ion-card-content>
+				<ion-row class="ion-align-items-center">
+          <ion-col size="8">
+						<ion-label color="#000000">
+							<img class="imagecarta"  [src]="p.data.foto"> 
+						</ion-label>
+					</ion-col> 
+					<ion-col size="8">
+						<ion-label color="#000000">
+							<b>{{ p.data.precio | currency:'EUR' }}</b>
+						</ion-label>
+					</ion-col>
+					<ion-col size="4" class="ion-text-right">
+						<ion-button fill="clear" (click)="addToCart(p.data)">
+							<ion-icon name="add"></ion-icon>
+						</ion-button>
+					</ion-col>
+				</ion-row>
+			</ion-card-content>
+		</ion-card>
+-->
+ </ion-list>
+
+
+</ion-content>

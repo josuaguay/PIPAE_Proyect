@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">   
+  <ion-toolbar color="tertiary"> 
+   <ion-title>Tutorial</ion-title>
+
+   <!-- Back button with a default href -->
+   <ion-buttons slot="end">
+    <ion-back-button routerLink='/bienvenida' default-href="bienvenida"></ion-back-button>
+    <ion-title routerLink='/bienvenida'>Back</ion-title> 
+  </ion-buttons>
+
+ </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img class="icon" src="assets/icon/Logo.png">  
+<ion-item>
+  <ion-grid>
+    <ion-row>
+      <p text-align: justify>
+        1.	Regístrese si es la primera vez que accede a la aplicación, introduciendo los datos que se le pedirán en el formulario.
+      </p>
+    </ion-row>
+    <ion-row>
+      <p>
+        2.	Una vez registrado, desde la pantalla principal, introduzca el usuario y la contraseña que creo en el momento del registro.
+      </p>
+    </ion-row>
+    <ion-row>
+      <p>    
+        3.	Si usted se encuentra en un establecimiento gastronómico adherido a PIPAVE, escanee el código QR que habitualmente se encuentra en las mesas. Si no lo localiza, pídaselo al personal del local, quien le facilitará el acceso a la carta para así poder realizar su pedido, añadiendo platos y bebidas a su cesta de comanda.
+      </p>
+    </ion-row> 
+    <ion-row>
+      <p>       
+        4.	Seleccione platos y bebidas de la carta, que se irán añadiendo a una cesta de comanda.
+      </p>
+    </ion-row> 
+    <ion-row>
+      <p>   
+        5.	Una vez haya terminado de elegir, accederá a una pantalla que mostrará la cesta del pedido, desde la que podrá realizar el pago y tras finalizar el mismo, se enviará directa y automáticamente la comanda a cocina.
+      </p>
+    </ion-row> 
+    <ion-row>
+      <p>     
+        6.	Seguidamente, le aparecerá en pantalla un mensaje similar a: “El pedido está en curso y le llegará enseguida ¡Que lo disfrute!”
+      </p>
+    </ion-row> 
+    <ion-row>
+      <p>       
+        7.	Al final del trámite le parecerá una pantalla desde la que, si así lo desea, podrá valorar su experiencia.
+      </p>
+    </ion-row> 
+  </ion-grid>
+</ion-item>
+</ion-content>
